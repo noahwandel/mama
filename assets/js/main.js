@@ -52,3 +52,14 @@ if (form) {
     window.location.href = `mailto:${RECIPIENT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+// Mobile quick-action bar: only appear once the hero buttons are scrolled out of view
+const bar = document.querySelector('.mobile-bar');
+const heroActions = document.querySelector('.hero-actions');
+if (bar && heroActions && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    bar.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+  }).observe(heroActions);
+} else if (bar) {
+  bar.classList.add('show');
+}

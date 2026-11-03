@@ -42,8 +42,11 @@ body {
   color: var(--ink);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* safety net: never scroll sideways on phones */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: var(--olive); }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; margin: 0 0 .5em; color: var(--ink); }
 h1 { font-size: clamp(2.7rem, 5.6vw, 4.5rem); }
@@ -216,7 +219,7 @@ section.section { padding: clamp(4rem, 8vw, 6.5rem) 0; position: relative; }
 .faq details { background: var(--white); border-radius: 16px; margin-bottom: .9rem; border: 1px solid var(--line); }
 .faq summary {
   list-style: none; cursor: pointer; padding: 1.3rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-  font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+  font-family: var(--serif); font-size: 1.35rem; font-weight: 600; line-height: 1.3;
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
@@ -312,13 +315,76 @@ section.section { padding: clamp(4rem, 8vw, 6.5rem) 0; position: relative; }
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
     padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom)); background: rgba(247, 245, 239, .96);
     border-top: 1px solid var(--line);
+    transform: translateY(110%); transition: transform .35s ease;
   }
+  .mobile-bar.show { transform: none; }
   .mobile-bar .btn { justify-content: center; padding: .8rem 1rem; font-size: .92rem; }
   body { padding-bottom: 72px; }
 }
 @media (max-width: 640px) {
-  .steps, .topics, .cred-list, .footer-grid { grid-template-columns: 1fr; }
+  body { font-size: 1rem; }
   .container { width: calc(100% - 2rem); }
-  .brand-name { font-size: 1.25rem; }
-  .form, .fee-card { padding: 1.6rem; }
+  .draft-banner { font-size: .75rem; padding: .35rem .8rem; }
+
+  /* Header */
+  .nav { height: 68px; }
+  .nav-links { top: 68px; }
+  .brand { gap: .6rem; }
+  .brand-mark { flex-basis: 38px; height: 38px; font-size: 1.15rem; }
+  .brand-name { font-size: 1.2rem; }
+  .brand-sub { font-size: .62rem; letter-spacing: .1em; }
+  .nav-toggle { width: 44px; height: 44px; display: grid; place-content: center; }
+
+  /* Hero: text first, compact photo – headline and buttons visible without scrolling */
+  .hero { padding: 1.5rem 0 3rem; }
+  .hero-grid { gap: 1.5rem; }
+  .hero-photo { order: -1; width: 210px; }
+  .hero-photo img { aspect-ratio: 1; border-radius: 50%; object-position: center 22%; }
+  .hero-photo::before { width: 90px; height: 90px; right: -26px; top: 6px; }
+  .hero-badge { display: none; }
+  .hero > .container > div { text-align: center; }
+  .hero .eyebrow { font-size: .68rem; letter-spacing: .12em; justify-content: center; }
+  .hero .eyebrow::before { display: none; }
+  h1 { font-size: 2.35rem; }
+  .hero h1 .sub { font-size: 1.05rem; margin-top: .8rem; }
+  .hero-actions { flex-direction: column; margin: 1.5rem 0 1rem; }
+  .hero-actions .btn { justify-content: center; width: 100%; }
+  .dot.olive, .dots .dot:nth-child(3), .dots .dot:nth-child(4) { display: none; }
+
+  /* Sections */
+  section.section { padding: 3.2rem 0; }
+  h2 { font-size: 1.95rem; }
+  .section-head { margin-bottom: 1.8rem; }
+  .lead { font-size: 1.05rem; }
+  .steps, .topics, .cred-list { grid-template-columns: 1fr; }
+  .steps { gap: 1rem; }
+  .step { padding: 1.5rem 1.4rem; }
+  .step-no { font-size: 2.3rem; margin-bottom: .5rem; }
+  .topic { padding: 1.25rem; }
+  .topic h3 { font-size: 1.22rem; }
+
+  /* About: smaller photo, no overflow from the decorative offset */
+  .about-photo { max-width: 240px; margin-inline: auto; }
+  .about-photo::after { inset: 12px -12px -12px 12px; }
+  .about-grid h2 { font-size: 1.65rem; }
+  .cred-list { margin: 1.2rem 0; }
+
+  /* Fees, FAQ, contact */
+  .form, .fee-card { padding: 1.4rem; }
+  .price-row .value { font-size: 1.45rem; }
+  .faq summary { font-size: 1.15rem; line-height: 1.3; padding: 1rem 1.1rem; min-height: 56px; }
+  .faq .answer { padding: 0 1.1rem 1.1rem; font-size: .96rem; }
+  .form .btn { width: 100%; justify-content: center; }
+  .form .check { padding: .3rem 0; }
+  .form .check input { width: 20px; height: 20px; flex: 0 0 20px; }
+  .contact-card { padding: 1.1rem 1.2rem; }
+  .contact-card a { display: inline-block; padding: .35rem 0; }
+  .notice { padding: 1.4rem 1.3rem; margin-top: 1.8rem; }
+
+  /* Footer: compact two-column link lists */
+  .site-footer { padding: 2.8rem 0 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem 1.2rem; }
+  .footer-grid > div:first-child, .footer-grid > div:nth-child(2) { grid-column: 1 / -1; }
+  .site-footer li a { display: inline-block; padding: .2rem 0; }
+  .footer-bottom { margin-top: 2rem; flex-direction: column; gap: .5rem; }
 }
