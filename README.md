@@ -23,6 +23,13 @@ Besuchers; es werden keine Daten über die Website übertragen.
    - `mailto:kontakt@example.de` in `index.html`
    - `RECIPIENT` in `assets/js/main.js` (Empfänger des Kontaktformulars)
 3. Das Entwurfs-Banner (`.draft-banner`) in allen drei HTML-Dateien entfernen.
+4. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, damit Suchmaschinen die
+   Startseite aufnehmen (Impressum und Datenschutz bleiben bewusst auf `noindex`).
+
+## Hosting
+
+Die Seite ist für Vercel vorbereitet (keine Konfiguration nötig, statische Dateien). `.vercelignore`
+hält `README.md` und `DESIGN.md` von der veröffentlichten Seite fern.
 
 ## Rechtlicher Rahmen
 
