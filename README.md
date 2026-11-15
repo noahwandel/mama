@@ -28,8 +28,15 @@ Besuchers; es werden keine Daten über die Website übertragen.
 
 ## Hosting
 
-Die Seite ist für Vercel vorbereitet (keine Konfiguration nötig, statische Dateien). `.vercelignore`
-hält `README.md` und `DESIGN.md` von der veröffentlichten Seite fern.
+Die Seite liegt auf Vercel im Projekt `johanna-isaza`: https://johanna-isaza.vercel.app
+(keine Konfiguration nötig, statische Dateien). `.vercelignore` hält `README.md` und `DESIGN.md`
+von der veröffentlichten Seite fern.
+
+Neu veröffentlichen (im Projektordner, einmalig vorher `npx vercel link --project johanna-isaza`):
+
+```bash
+npx vercel deploy --prod
+```
 
 ## Rechtlicher Rahmen
 
