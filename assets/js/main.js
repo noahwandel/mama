@@ -64,9 +64,14 @@ function buildPath() {
   };
   sections.slice(1).forEach(sec => {
     const secTop = sec.getBoundingClientRect().top + window.scrollY - top;
-    const pad = parseFloat(getComputedStyle(sec).paddingTop);
-    const gap = Math.min(110, (pad || 80) * 0.7);
-    const from = secTop - gap * .6, to = secTop + gap;
+    // The crossing stays inside the empty band between the previous block's content and this
+    // section's content: previous padding-bottom + this padding-top (either can be 0).
+    const prev = sec.previousElementSibling;
+    const prevPad = prev && prev.matches('section') ? parseFloat(getComputedStyle(prev).paddingBottom) || 0 : 0;
+    const padTop = parseFloat(getComputedStyle(sec).paddingTop) || 0;
+    const bandTop = secTop - prevPad, bandBottom = secTop + padTop;
+    const inset = (bandBottom - bandTop) * .18;
+    const from = bandTop + inset, to = bandBottom - inset;
     if (from > y) vertical(from);
     const next = side === right ? left : right;
     d += ` C ${side} ${from + (to - from) * .55}, ${next} ${from + (to - from) * .45}, ${next} ${to}`;
@@ -116,7 +121,13 @@ if (form) {
     const d = new FormData(form);
     if (!d.get('name') || !d.get('email') || !d.get('privacy')) { form.reportValidity(); return; }
     const subject = `Anfrage von ${d.get('name')}`;
-    const body = `${d.get('message') || ''}\n\n${d.get('name')}\n${d.get('email')}`;
+    const body = `${d.get('message') || ''}\n\nGewünschtes Format: ${d.get('format') || 'Noch offen'}\n\n${d.get('name')}\n${d.get('email')}`;
     window.location.href = `mailto:${RECIPIENT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+/* ---------- links like "Spaziergang anfragen" preselect the format in the form ---------- */
+document.querySelectorAll('[data-format]').forEach(a => a.addEventListener('click', () => {
+  const radio = form && [...form.elements.format].find(r => r.value === a.dataset.format);
+  if (radio) radio.checked = true;
+}));

@@ -116,7 +116,7 @@ Anthropic, [Improving frontend design through Skills](https://claude.com/resourc
 |---|---|
 | **Purpose** | Visitors who feel overwhelmed should feel *safe* within 5 seconds and find "Termin anfragen" without searching. |
 | **Mood words** | warm · editorial · calm · grounded · quietly confident |
-| **Concept** | **"Der Weg"** (the path). One hand-drawn line runs through the page like a path walked together. It draws itself as you scroll and connects the sections. |
+| **Concept** | **"Der Weg"** (the path). One hand-drawn line runs through the page like a path walked together. It draws itself as you scroll and connects the sections, crossing only in the empty space between them. Johanna's "Beratung in Bewegung" (counselling on walks) makes the path literal: the two offers sit as numbered stations on a dashed line, like the three process steps. |
 | **Not like** | The reference site (olive/mint, arch photo, floating dots), generic therapy sites (pastel, stock photos of stones and leaves), SaaS landing pages. |
 | **Signature elements** | ① The drawn path line. ② A slowly rotating round seal, "Geprüfte Psychologische Beraterin · VFP". ③ An editorial numbered topic list instead of icon cards. |
 | **Typography** | **Fraunces** (soft, characterful variable serif) for display, set large and light with italic accents. **Figtree** (friendly geometric sans) for text. Big jumps: hero around 6rem against 1rem body. |
@@ -126,6 +126,6 @@ Anthropic, [Improving frontend design through Skills](https://claude.com/resourc
 | **Motion** | One orchestrated page load (headline words rise in, staggered). The path draws on scroll; the seal turns slowly. Everything is off with `prefers-reduced-motion`. |
 | **Photos** | One tall portrait with a thin inset frame, plus a close crop in the "Über mich" index card. Warm, natural, never filtered. |
 | **Components** | Pill buttons in apricot (primary) and an outline (secondary); underlined text links with an animated underline; FAQ as fine-ruled lines, not boxes. |
-| **Copy tone** | "du", warm, short sentences. Never: Therapie, Behandlung, Patient, Diagnose, Heilung, Psychologin. |
+| **Copy tone** | "Sie" (matches Johanna's own texts), warm, short sentences. Her own wording is kept for "Über mich" and the offers. Claims about the effects of exercise use "kann". Never: Therapie, Behandlung, Patient, Diagnose, Heilung, Psychologin. |
 | **Accessibility** | Contrast of 4.5:1 or more for text, 44px tap targets, semantic landmarks, visible focus rings, alt text. |
 | **Privacy** | No external requests: fonts self-hosted, no tracking, no embeds. |
