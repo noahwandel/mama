@@ -9,7 +9,7 @@ Statische Website (HTML/CSS/JS, kein Build nötig). Einfach `index.html` im Brow
 **Ansprache:** durchgehend „Sie“. Angezeigt wird der Name „Johanna Isaza“; im Impressum und in der
 Datenschutzerklärung steht der vollständige Name „Johanna Isaza Merchan“.
 
-**Formate:** online, telefonisch, persönlich im Beratungsraum und als Beratung in Bewegung (Spaziergänge).
+**Formate:** online, telefonisch und als Beratung in Bewegung (Spaziergänge). Kein Beratungsraum.
 Das Kontaktformular fragt das gewünschte Format ab und öffnet das E-Mail-Programm der Besucherin bzw. des
 Besuchers; es werden keine Daten über die Website übertragen.
 
