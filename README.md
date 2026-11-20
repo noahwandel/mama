@@ -17,16 +17,16 @@ Besuchers; es werden keine Daten über die Website übertragen.
 
 ## Vor dem Livegang
 
-Alle Inhalte sind fertig: keine gelben Platzhalter und kein Entwurfs-Banner mehr. Offen ist nur die
-Veröffentlichung:
+Alle Inhalte sind fertig. Domain: **coachingwalkandtalk.de** (Namecheap), Hosting: **Firebase Hosting**.
+Die Startseite ist für Suchmaschinen freigegeben und verweist per `canonical` auf die Domain.
 
-1. Endgültigen Hoster und Domain festlegen; Abschnitt „Hosting“ in der Datenschutzerklärung anpassen
-   (derzeit Vercel, nur als Vorschau).
-2. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, sobald die Seite unter der
-   endgültigen Domain liegt (die Rechtstexte bleiben bewusst auf `noindex`).
-3. Empfohlen: Beratungsbedingungen einmal anwaltlich prüfen lassen; E-Mail-Dienst mit Vertrag zur
+1. Firebase-Projekt anlegen (ohne Google Analytics, ohne Gemini), Data Processing and Security Terms akzeptieren.
+2. Projekt-ID in `.firebaserc` eintragen und veröffentlichen (siehe „Hosting“).
+3. In Firebase die Domain hinzufügen und die angezeigten DNS-Einträge bei Namecheap (Advanced DNS) eintragen.
+4. Danach die Vercel-Vorschau löschen.
+5. Empfohlen: Beratungsbedingungen einmal anwaltlich prüfen lassen; E-Mail-Dienst mit Vertrag zur
    Auftragsverarbeitung statt Gmail (siehe unten).
-4. Falls das Finanzamt eine Wirtschafts-Identifikationsnummer zuteilt: im Impressum ergänzen.
+6. Falls das Finanzamt eine Wirtschafts-Identifikationsnummer zuteilt: im Impressum ergänzen.
 
 ## Im Alltag (rechtlich wichtig)
 
@@ -44,20 +44,21 @@ Veröffentlichung:
 
 ## Hosting
 
-**Vorschau:** https://johanna-isaza.vercel.app (Vercel-Projekt `johanna-isaza`), nur damit Johanna den
-Entwurf ansehen kann; nicht von Suchmaschinen erfasst. Die eigentliche Veröffentlichung folgt separat
-(keine Konfiguration nötig, statische Dateien). `.vercelignore` hält `README.md` und `DESIGN.md`
-von der veröffentlichten Seite fern.
+**Live:** Firebase Hosting, Domain https://coachingwalkandtalk.de. `firebase.json` legt fest, dass nur die
+Website veröffentlicht wird (nicht `README.md`, `DESIGN.md`, `vorlagen/`, `dokumente/`).
 
-**Für die Veröffentlichung:** Der kostenlose Hobby-Tarif von Vercel ist nur für private, nicht kommerzielle
-Nutzung erlaubt. Die öffentliche Praxis-Website also bei Vercel Pro oder einem (EU-)Webhoster mit eigener
-Domain veröffentlichen und den Abschnitt „Hosting“ in der Datenschutzerklärung anpassen.
-
-Vorschau aktualisieren (im Projektordner, einmalig vorher `npx vercel link --project johanna-isaza`):
+Veröffentlichen (einmalig Node.js installieren; im Projektordner):
 
 ```bash
-npx vercel deploy --prod
+npx firebase-tools login
 ```
+
+```bash
+npx firebase-tools deploy --only hosting
+```
+
+**Vorschau (alt):** https://johanna-isaza.vercel.app, nur zur Ansicht und mit `noindex`; wird nach dem
+Livegang gelöscht. Der kostenlose Vercel-Tarif ist nicht für kommerzielle Nutzung gedacht.
 
 ## Rechtlicher Rahmen
 

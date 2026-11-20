@@ -38,7 +38,8 @@ Den Link schicke ich Ihnen vor dem Termin.
 Herzliche Grüße
 Johanna Isaza
 
-Psychologische Beratung · Bruno-Tacke-Straße 15 · 28329 Bremen · +49 172 2127357
+Coaching Walk and Talk · Psychologische Beratung · coachingwalkandtalk.de
+Bruno-Tacke-Straße 15 · 28329 Bremen · +49 172 2127357
 Psychologische Beratung ist keine Psychotherapie und keine Ausübung der Heilkunde.
 
 **Anhang:** Beratungsbedingungen (PDF)

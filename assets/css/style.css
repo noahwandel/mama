@@ -115,6 +115,7 @@ p { margin: 0 0 1.1em; }
 .menu a:not(.btn):hover { color: var(--ink); }
 .menu a:not(.btn):hover::after { right: 0; }
 .menu .btn { min-height: 44px; padding: .7rem 1.2rem; font-size: .92rem; }
+.menu a, .wordmark span { white-space: nowrap; }
 .menu-extra { display: none; }
 .menu .menu-extra a:not(.btn) { font: inherit; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .menu .menu-extra a:not(.btn)::after { display: none; }
@@ -382,17 +383,8 @@ h2 em { color: var(--apricot-ink); }
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1080px) {
-  .topic { grid-template-columns: 4rem 1fr 1.2fr; }
-  .topic .arrow { display: none; }
-  .section-head > div { grid-column: 1 / -1; }
-  .section-head > p { grid-column: 1 / span 8; }
-  .benefits { grid-template-columns: 1fr 1fr; }
-  .move-quote { grid-column: 1 / -1; }
-  .move-foot > div { grid-column: 1 / span 8; }
-}
-
-@media (max-width: 880px) {
+/* the full menu needs ~1120px next to the wordmark; below that, use the menu button */
+@media (max-width: 1120px) {
   .menu-toggle { display: grid; }
   .menu {
     position: fixed; inset: 0; flex-direction: column; justify-content: center; gap: 1.4rem;
@@ -405,6 +397,19 @@ h2 em { color: var(--apricot-ink); }
   .menu-extra { display: block; font-size: .95rem; color: var(--ink-soft); }
   /* backdrop-filter would trap the fixed menu inside the header – use a solid header on phones */
   .site-header.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--paper); }
+}
+
+@media (max-width: 1080px) {
+  .topic { grid-template-columns: 4rem 1fr 1.2fr; }
+  .topic .arrow { display: none; }
+  .section-head > div { grid-column: 1 / -1; }
+  .section-head > p { grid-column: 1 / span 8; }
+  .benefits { grid-template-columns: 1fr 1fr; }
+  .move-quote { grid-column: 1 / -1; }
+  .move-foot > div { grid-column: 1 / span 8; }
+}
+
+@media (max-width: 880px) {
 
   /* every 12-column grid becomes a single column on small screens */
   .hero-grid, .section-head, .statement, .spotlight, .about, .fees, .faq-grid, .contact, .footer-top { grid-template-columns: 1fr; }
