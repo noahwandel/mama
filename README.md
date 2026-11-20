@@ -4,6 +4,7 @@ Statische Website (HTML/CSS/JS, kein Build nötig). Einfach `index.html` im Brow
 
 - `index.html` – Startseite (Hero, Themen, Angebot „Zwei Wege, ein Ziel“, Beratung in Bewegung, Über mich, Ablauf, Honorar, FAQ, Kontakt)
 - `impressum.html`, `datenschutz.html`, `beratungsbedingungen.html` – Pflichtseiten und Beratungsbedingungen (inkl. Widerrufsbelehrung)
+- `vorlagen/` – E-Mail-Vorlagen für Terminvereinbarungen (nicht Teil der Website)
 - `assets/` – CSS, JS, Bilder und lokal eingebundene Schriften (keine Google-Server → DSGVO)
 
 **Ansprache:** durchgehend „Sie“. Angezeigt wird der Name „Johanna Isaza“; im Impressum, in der
@@ -19,6 +20,9 @@ Besuchers; es werden keine Daten über die Website übertragen.
    - Steuerstatus (Kleinunternehmerin oder mit MwSt.): Honorar-Hinweis, Beratungsbedingungen, ggf. USt-IdNr. im Impressum
    - Zahlungsziel in den Beratungsbedingungen
    - Bildnachweis (Impressum)
+   - Dauer des Erstgesprächs (Honorar)
+   - Ob die US-Lizenz (LPN) noch gültig ist (Über mich)
+   - Speicherfristen für Anfragen und Gesprächsnotizen (Datenschutzerklärung)
    - Rechtliche Prüfung der Beratungsbedingungen (Hinweis oben auf der Seite)
 
    Alle noch offenen Stellen finden: `grep -n 'class="ph"' *.html`
@@ -30,10 +34,10 @@ Besuchers; es werden keine Daten über die Website übertragen.
 
 ## Im Alltag (rechtlich wichtig)
 
-- **Terminbestätigung per E-Mail** mit Link auf die Beratungsbedingungen schicken. Findet der Termin innerhalb
-  von 14 Tagen statt, die Klientin bzw. den Klienten bestätigen lassen, dass die Beratung vor Ablauf der
-  Widerrufsfrist beginnen soll und ihr bzw. ihm bekannt ist, dass das Widerrufsrecht mit vollständiger
-  Erbringung erlischt.
+- **Termine per E-Mail vereinbaren** mit den Vorlagen in `vorlagen/terminvorschlag.md`: Terminvorschlag mit
+  den Beratungsbedingungen, der Widerrufsbelehrung und dem Muster-Widerrufsformular **im Text oder als
+  PDF-Anhang** (ein Link genügt nicht), dann Bestätigung. Liegt der Termin innerhalb von 14 Tagen, muss die
+  Klientin bzw. der Klient den vorzeitigen Beginn ausdrücklich verlangen (Satz steht in der Vorlage).
 - **Videodienst:** Vor dem ersten Online-Termin mitteilen, welcher Dienst genutzt wird und ob Daten
   außerhalb der EU verarbeitet werden. Am besten einen Dienst mit Sitz in der EU, Verschlüsselung und
   Vertrag zur Auftragsverarbeitung wählen.
