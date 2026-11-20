@@ -5,6 +5,7 @@ Statische Website (HTML/CSS/JS, kein Build nötig). Einfach `index.html` im Brow
 - `index.html` – Startseite (Hero, Themen, Angebot „Zwei Wege, ein Ziel“, Beratung in Bewegung, Über mich, Ablauf, Honorar, FAQ, Kontakt)
 - `impressum.html`, `datenschutz.html`, `beratungsbedingungen.html` – Pflichtseiten und Beratungsbedingungen (inkl. Widerrufsbelehrung)
 - `vorlagen/` – E-Mail-Vorlagen für Terminvereinbarungen (nicht Teil der Website)
+- `dokumente/` – Erklärung der Website für Johanna auf Spanisch (PDF, nicht Teil der Website)
 - `assets/` – CSS, JS, Bilder und lokal eingebundene Schriften (keine Google-Server → DSGVO)
 
 **Ansprache:** durchgehend „Sie“. Angezeigt wird der Name „Johanna Isaza“; im Impressum, in der
