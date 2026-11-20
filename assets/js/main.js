@@ -113,7 +113,7 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ---------- contact form (draft): opens the visitor's e-mail program, nothing is sent to a server ---------- */
-const RECIPIENT = 'kontakt@example.de'; // TODO: real address
+const RECIPIENT = 'johannaisaza@gmail.com';
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', e => {

@@ -116,6 +116,8 @@ p { margin: 0 0 1.1em; }
 .menu a:not(.btn):hover::after { right: 0; }
 .menu .btn { min-height: 44px; padding: .7rem 1.2rem; font-size: .92rem; }
 .menu-extra { display: none; }
+.menu .menu-extra a:not(.btn) { font: inherit; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.menu .menu-extra a:not(.btn)::after { display: none; }
 .menu-toggle { display: none; width: 46px; height: 46px; border: 1.5px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; place-content: center; gap: 5px; position: relative; z-index: 2; }
 .menu-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); transition: transform .3s; }
 .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
@@ -360,6 +362,10 @@ h2 em { color: var(--apricot-ink); }
 .legal .wrap { max-width: 780px; }
 .legal h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 300; }
 .legal h2 { font-size: 1.7rem; margin-top: 2.4rem; font-weight: 400; }
+.legal .box { margin: 1.6rem 0; padding: 1.5rem 1.6rem; background: #fffaf3; border: 1px solid var(--sand); border-radius: var(--radius); }
+.legal .box h3 { font-size: 1.35rem; margin-top: 1.4rem; }
+.legal .box h3:first-child { margin-top: 0; }
+.legal .box ul { padding-left: 1.1rem; }
 
 /* ---------- motion ---------- */
 @keyframes rise { from { transform: translateY(105%); } }
