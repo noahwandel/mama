@@ -21,7 +21,7 @@ Alle Inhalte sind fertig. Domain: **coachingwalkandtalk.de** (Namecheap), Hostin
 Die Startseite ist für Suchmaschinen freigegeben und verweist per `canonical` auf die Domain.
 
 1. Firebase-Projekt anlegen (ohne Google Analytics, ohne Gemini), Data Processing and Security Terms akzeptieren.
-2. Projekt-ID in `.firebaserc` eintragen und veröffentlichen (siehe „Hosting“).
+2. Veröffentlichen (siehe „Hosting“); die Projekt-ID `coachingwalkandtalk` steht bereits in `.firebaserc`.
 3. In Firebase die Domain hinzufügen und die angezeigten DNS-Einträge bei Namecheap (Advanced DNS) eintragen.
 4. Danach die Vercel-Vorschau löschen.
 5. Empfohlen: Beratungsbedingungen einmal anwaltlich prüfen lassen; E-Mail-Dienst mit Vertrag zur
