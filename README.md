@@ -17,21 +17,16 @@ Besuchers; es werden keine Daten über die Website übertragen.
 
 ## Vor dem Livegang
 
-1. Gelb markierte Stellen (`class="ph"`) ersetzen. Noch offen:
-   - Steuerstatus (Kleinunternehmerin oder mit MwSt.): Honorar-Hinweis, Beratungsbedingungen, ggf. USt-IdNr. im Impressum
-   - Zahlungsziel in den Beratungsbedingungen
-   - Bildnachweis (Impressum)
-   - Dauer des Erstgesprächs (Honorar)
-   - Ob die US-Lizenz (LPN) noch gültig ist (Über mich)
-   - Speicherfristen für Anfragen und Gesprächsnotizen (Datenschutzerklärung)
-   - Rechtliche Prüfung der Beratungsbedingungen (Hinweis oben auf der Seite)
+Alle Inhalte sind fertig: keine gelben Platzhalter und kein Entwurfs-Banner mehr. Offen ist nur die
+Veröffentlichung:
 
-   Alle noch offenen Stellen finden: `grep -n 'class="ph"' *.html`
-2. Datenschutzerklärung, Abschnitt „Hosting“: an den endgültigen Hoster anpassen (derzeit Vercel,
-   nur als Vorschau).
-3. Das Entwurfs-Banner (`.draft-banner`) in allen HTML-Dateien entfernen.
-4. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, damit Suchmaschinen die
-   Startseite aufnehmen (die Rechtstexte bleiben bewusst auf `noindex`).
+1. Endgültigen Hoster und Domain festlegen; Abschnitt „Hosting“ in der Datenschutzerklärung anpassen
+   (derzeit Vercel, nur als Vorschau).
+2. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, sobald die Seite unter der
+   endgültigen Domain liegt (die Rechtstexte bleiben bewusst auf `noindex`).
+3. Empfohlen: Beratungsbedingungen einmal anwaltlich prüfen lassen; E-Mail-Dienst mit Vertrag zur
+   Auftragsverarbeitung statt Gmail (siehe unten).
+4. Falls das Finanzamt eine Wirtschafts-Identifikationsnummer zuteilt: im Impressum ergänzen.
 
 ## Im Alltag (rechtlich wichtig)
 

@@ -1,6 +1,7 @@
 # E-Mail-Vorlagen für Terminvereinbarungen
 
 Diese Vorlagen setzen die Beratungsbedingungen (Ziffer 3 und 10) im Alltag um.
+Rechnungen müssen den Satz „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ enthalten (Kleinunternehmerregelung).
 Wichtig: Die Beratungsbedingungen mit Widerrufsbelehrung und Muster-Widerrufsformular müssen
 **in der E-Mail selbst oder als PDF-Anhang** mitgeschickt werden. Ein Link auf die Website genügt nicht.
 
@@ -16,8 +17,8 @@ vielen Dank für Ihre Nachricht. Gerne schlage ich Ihnen folgenden Termin vor:
 
 - **Termin:** [Wochentag, Datum, Uhrzeit]
 - **Format:** [online per Video / telefonisch / Beratung in Bewegung, Treffpunkt: …]
-- **Leistung:** [Erstgespräch (__ Minuten) / Einzelgespräch (60 Minuten) / Beratung in Bewegung (75 Minuten)]
-- **Honorar:** [70 / 80] € [Steuerhinweis wie auf der Website]
+- **Leistung:** [Erstgespräch (50 Minuten) / Einzelgespräch (60 Minuten) / Beratung in Bewegung (75 Minuten)]
+- **Honorar:** [60 / 70 / 80] € (gemäß § 19 UStG wird keine Umsatzsteuer berechnet)
 
 Im Anhang finden Sie meine Beratungsbedingungen mit der Widerrufsbelehrung und dem
 Muster-Widerrufsformular. Bitte bestätigen Sie den Termin mit einer kurzen Antwort auf diese E-Mail;
