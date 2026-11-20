@@ -18,13 +18,14 @@ Besuchers; es werden keine Daten über die Website übertragen.
 1. Gelb markierte Stellen (`class="ph"`) ersetzen. Noch offen:
    - Steuerstatus (Kleinunternehmerin oder mit MwSt.): Honorar-Hinweis, Beratungsbedingungen, ggf. USt-IdNr. im Impressum
    - Zahlungsziel in den Beratungsbedingungen
-   - Videodienst für Online-Beratung (Datenschutzerklärung)
    - Bildnachweis (Impressum)
    - Rechtliche Prüfung der Beratungsbedingungen (Hinweis oben auf der Seite)
 
    Alle noch offenen Stellen finden: `grep -n 'class="ph"' *.html`
-2. Das Entwurfs-Banner (`.draft-banner`) in allen HTML-Dateien entfernen.
-3. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, damit Suchmaschinen die
+2. Datenschutzerklärung, Abschnitt „Hosting“: an den endgültigen Hoster anpassen (derzeit Vercel,
+   nur als Vorschau).
+3. Das Entwurfs-Banner (`.draft-banner`) in allen HTML-Dateien entfernen.
+4. In `index.html` die Zeile `<meta name="robots" content="noindex">` entfernen, damit Suchmaschinen die
    Startseite aufnehmen (die Rechtstexte bleiben bewusst auf `noindex`).
 
 ## Im Alltag (rechtlich wichtig)
@@ -33,6 +34,9 @@ Besuchers; es werden keine Daten über die Website übertragen.
   von 14 Tagen statt, die Klientin bzw. den Klienten bestätigen lassen, dass die Beratung vor Ablauf der
   Widerrufsfrist beginnen soll und ihr bzw. ihm bekannt ist, dass das Widerrufsrecht mit vollständiger
   Erbringung erlischt.
+- **Videodienst:** Vor dem ersten Online-Termin mitteilen, welcher Dienst genutzt wird und ob Daten
+  außerhalb der EU verarbeitet werden. Am besten einen Dienst mit Sitz in der EU, Verschlüsselung und
+  Vertrag zur Auftragsverarbeitung wählen.
 - **Einwilligung für Gesundheitsdaten** (Art. 9 DSGVO) von Klientinnen und Klienten schriftlich einholen.
 - **E-Mail:** Die Seite nennt eine Gmail-Adresse. Für Klientendaten ist ein E-Mail-Dienst mit Vertrag zur
   Auftragsverarbeitung (z. B. eine eigene Domain bei einem EU-Anbieter) die bessere Wahl; dann
@@ -40,15 +44,16 @@ Besuchers; es werden keine Daten über die Website übertragen.
 
 ## Hosting
 
-Die Seite liegt auf Vercel im Projekt `johanna-isaza`: https://johanna-isaza.vercel.app
+**Vorschau:** https://johanna-isaza.vercel.app (Vercel-Projekt `johanna-isaza`), nur damit Johanna den
+Entwurf ansehen kann; nicht von Suchmaschinen erfasst. Die eigentliche Veröffentlichung folgt separat
 (keine Konfiguration nötig, statische Dateien). `.vercelignore` hält `README.md` und `DESIGN.md`
 von der veröffentlichten Seite fern.
 
-**Achtung:** Der kostenlose Hobby-Tarif von Vercel ist nur für private, nicht kommerzielle Nutzung erlaubt.
-Für die Praxis-Website entweder Vercel Pro oder einen (EU-)Webhoster mit eigener Domain nutzen und den
-Abschnitt „Hosting“ in der Datenschutzerklärung entsprechend anpassen.
+**Für die Veröffentlichung:** Der kostenlose Hobby-Tarif von Vercel ist nur für private, nicht kommerzielle
+Nutzung erlaubt. Die öffentliche Praxis-Website also bei Vercel Pro oder einem (EU-)Webhoster mit eigener
+Domain veröffentlichen und den Abschnitt „Hosting“ in der Datenschutzerklärung anpassen.
 
-Neu veröffentlichen (im Projektordner, einmalig vorher `npx vercel link --project johanna-isaza`):
+Vorschau aktualisieren (im Projektordner, einmalig vorher `npx vercel link --project johanna-isaza`):
 
 ```bash
 npx vercel deploy --prod
